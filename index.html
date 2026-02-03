@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Purple x Orange Love Portal 💜🧡</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Background blobs + stars -->
+    <div class="bg">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+      <div class="stars"></div>
+    </div>
+
+    <!-- Cursor flower garden canvas -->
+    <canvas id="garden"></canvas>
+
+    <!-- Top nav -->
+    <header class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span id="siteTitle">Love Portal</span>
+      </div>
+
+      <nav class="nav">
+        <a href="#home" class="navLink">Home</a>
+        <a href="#gardenPage" class="navLink">Garden</a>
+        <a href="#memes" class="navLink">Memes</a>
+        <a href="#letter" class="navLink">Letter</a>
+        <a href="#quiz" class="navLink">Quiz</a>
+      </nav>
+
+      <div class="topActions">
+        <button id="soundBtn" class="chip">🔊 Sound: OFF</button>
+        <button id="chaosBtn" class="chip">😈 Chaos Mode</button>
+      </div>
+    </header>
+
+    <!-- Page container -->
+    <main class="pages" id="pages">
+      <!-- HOME -->
+      <section class="page active" id="home">
+        <div class="grid">
+          <div class="card hero">
+            <div class="pill">💜 Purple x 🧡 Orange</div>
+            <h1>
+              Hey <span id="herName">Her Name</span> — welcome to the
+              <span class="accent">Love Portal</span>.
+            </h1>
+            <p class="muted">
+              I coded this just for you. It’s romantic… and slightly unhinged 😄
+              Use the nav like a real website.
+            </p>
+
+            <div class="ctaRow">
+              <a class="btn primary" href="#gardenPage"
+                >Enter Flower Garden 🌸</a
+              >
+              <a class="btn" href="#letter">Open Love Letter 💌</a>
+            </div>
+
+            <div class="miniStats">
+              <div class="stat">
+                <div class="statN" id="loveLevel">999</div>
+                <div class="statL">Love Level</div>
+              </div>
+              <div class="stat">
+                <div class="statN" id="chaosLevel">0</div>
+                <div class="statL">Chaos Level</div>
+              </div>
+              <div class="stat">
+                <div class="statN" id="flowersCount">0</div>
+                <div class="statL">Flowers Planted</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card spotlight">
+            <h2>Quick Surprise</h2>
+            <p class="muted">
+              Press the button. Don’t worry. Totally safe. (maybe)
+            </p>
+
+            <button id="surpriseBtn" class="btn primary wide">
+              🎁 Click for a Surprise
+            </button>
+
+            <div class="surpriseBox" id="surpriseBox" aria-live="polite"></div>
+
+            <div class="tip">
+              <span>Tip:</span> Move your cursor around — the garden grows
+              everywhere you go 🌼
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GARDEN -->
+      <section class="page" id="gardenPage">
+        <div class="pageHeader">
+          <h2>Flower Garden</h2>
+          <p class="muted">
+            Every time you move your cursor, flowers appear. It’s basically your
+            magical trail. (Try “Chaos Mode” for… extra spice.)
+          </p>
+        </div>
+
+        <div class="card panel">
+          <div class="row">
+            <button class="btn primary" id="boostGarden">
+              🌸 Boost Flowers
+            </button>
+            <button class="btn" id="clearGarden">🧹 Clear Garden</button>
+            <button class="btn" id="sparkleToggle">✨ Sparkles: ON</button>
+            <button class="btn" id="slowMo">🐢 Slow Motion</button>
+          </div>
+          <p class="muted small">
+            Pro move: Write her initials by moving the cursor slowly 😉
+          </p>
+        </div>
+
+        <div class="card bigNote">
+          <h3>Garden Rules</h3>
+          <ul>
+            <li>Flowers = affection points</li>
+            <li>More flowers = more dramatic vibes</li>
+            <li>Chaos Mode = “I’m too cute to be normal” mode</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- MEMES -->
+      <section class="page" id="memes">
+        <div class="pageHeader">
+          <h2>Memes & Funny Stuff</h2>
+          <p class="muted">Because romance + comedy = unbeatable combo.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card memeCard">
+            <h3>Relationship Status</h3>
+            <p class="bigText" id="statusText">Loading…</p>
+            <button class="btn primary" id="shuffleStatus">🔁 Shuffle</button>
+          </div>
+
+          <div class="card memeCard">
+            <h3>Compliment Cannon</h3>
+            <p class="muted">Press to get blasted with compliments.</p>
+            <button class="btn primary" id="complimentBtn">💥 Fire!</button>
+            <div class="bubbleArea" id="bubbleArea"></div>
+          </div>
+
+          <div class="card memeCard">
+            <h3>Emergency Button</h3>
+            <p class="muted">
+              When she’s too cute and your brain stops working.
+            </p>
+            <button class="btn danger" id="panicBtn">🚨 PANIC</button>
+            <p class="muted small" id="panicMsg"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- LETTER -->
+      <section class="page" id="letter">
+        <div class="pageHeader">
+          <h2>Love Letter 💌</h2>
+          <p class="muted">Okay, serious for 10 seconds.</p>
+        </div>
+
+        <div class="card letterCard">
+          <div class="letterTop">
+            <div class="stamp">💜🧡</div>
+            <div>
+              <div class="toLine">To: <span id="toName">Her Name</span></div>
+              <div class="fromLine">
+                From: <span id="fromName">Your Name</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="typed" id="typedLetter"></div>
+
+          <div class="row">
+            <button class="btn primary" id="retype">⌨️ Retype</button>
+            <button class="btn" id="confetti">🎉 Confetti</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUIZ -->
+      <section class="page" id="quiz">
+        <div class="pageHeader">
+          <h2>The “Will You Be My Valentine?” Page</h2>
+          <p class="muted">Important official government question.</p>
+        </div>
+
+        <div class="card quizCard">
+          <h3>
+            Will you be my Valentine, <span id="quizName">Her Name</span>?
+          </h3>
+
+          <div class="row">
+            <button class="btn primary" id="yesBtn">Yes 💘</button>
+            <button class="btn" id="noBtn">No 🙈</button>
+          </div>
+
+          <p class="muted small">Try pressing “No” if you dare 😄</p>
+
+          <div id="result" class="result"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Built with 💜 + 🧡 and healthy levels of mischief.
+    </footer>
+
+    <audio id="bgm" loop preload="auto">
+      <source src="song.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
